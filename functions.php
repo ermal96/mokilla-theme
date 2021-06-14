@@ -266,7 +266,7 @@ function stop_heartbeat() {
 add_action( 'admin_notices', 'id_WPSE_114111' ); */
 
 function mokilla_modify_footer() {
-	echo 'Engineered by <a href="mailto:v.serxhio@gmail.com">Crispy Bacon</a>';
+	echo 'Engineered by <a href="mailto:v.serxhio@gmail.com">Serxhio Vrapi</a>';
 }
 
 add_filter( 'admin_footer_text', 'mokilla_modify_footer' );
