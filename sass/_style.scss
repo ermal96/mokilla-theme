@@ -1,0 +1,90 @@
+/*!
+Theme Name: Mokilla Theme
+Theme URI: https://www.crispybacon.it/ 
+Author: Serxhio Vrapi
+Author URI: www.crispybacon.it
+Description: 
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: mokilla
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+
+mokilla is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+// Aggiungere il font
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Noto+Serif:400,700');
+@import "functions/functions";
+@import "variables-site/variables-site";
+@import "mixins/mixins-master";
+@import "helpers/helpers";
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+
+@import "normalize";
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+@import "typography/typography";
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+
+@import "lists/lists";
+@import "tables/tables";
+@import "forms/forms";
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+
+@import "navigation/navigation";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+
+@import "modules/accessibility";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+
+@import "modules/clearings";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+
+@import "layout/layout";
+@import "layout/header";
+@import "layout/footer";
+@import "site/site";
+
+/* Activate this to make room for sidebar */
+// @import "layout/content-sidebar";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+
+// @import "modules/infinite-scroll";
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+
+@import "media/media";
+/*--------------------------------------------------------------
+# Blocks
+--------------------------------------------------------------*/
+
+@import "blocks/blocks";

@@ -1,0 +1,7 @@
+$compiling-style: 'blocks';
+.edit-post-visual-editor {
+	& .editor-post-title__block, & .editor-block-list__block {
+		max-width: 1024px;
+	}
+	@import "style";
+}

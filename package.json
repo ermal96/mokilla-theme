@@ -1,0 +1,30 @@
+{
+    "name": "mokilla",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "dev": "npm-run-all --parallel watch:*",
+        "build": "npm-run-all build-task:*",
+        "build-task:scss-compile": "sass --style compressed sass/style_frontend.scss style.css",
+        "build-task:autoprefixer": "postcss style.css --use autoprefixer -o style.css",
+        "build-task:js": "touch scripts.min.js && concat -o scripts.min.js js/*",
+        "build-task:js-uglify": "uglifyjs scripts.min.js --compress --output scripts.min.js",
+        "build-task:scss-compile-blocks": "sass --style compressed sass/style_blocks.scss editor.css",
+        "build-task:autoprefixer-blocks": "postcss editor.css --use autoprefixer -o editor.css",
+        "watch:js": "onchange 'js/*' -- npm run build-task:js",
+        "watch:sass": "sass --watch sass/style_frontend.scss style.css",
+        "watch:sass-blocks": "sass --watch sass/style_blocks.scss editor.css"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "autoprefixer": "8.5.0",
+        "concat": "1.0.3",
+        "sass": "^1.17.2",
+        "npm-run-all": "^4.1.3",
+        "onchange": "^4.0.0",
+        "postcss-cli": "5.0.0",
+        "uglify-js": "3.3.27"
+    }
+}

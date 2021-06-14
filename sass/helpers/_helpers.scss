@@ -1,0 +1,54 @@
+/*---
+    # For Gutenberg color palette
+ */
+
+.has-color-primary-background-color {
+    background-color: $color__primary;
+}
+
+.has-color-primary-color {
+    color: $color__primary;
+}
+
+.has-color-accent-background-color {
+    background-color: $color__accent;
+}
+
+.has-color-accent-color {
+    color: $color__accent;
+}
+
+/*---
+    # Generic helpers
+ */
+.text-center {
+    text-align: center !important;
+}
+
+.boldest {
+    font-weight: $font__weight-bold !important;
+}
+
+hr {
+    background-color: $color__background-hr;
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.5em;
+}
+
+/*---
+    # Dashicon helpers
+ */
+.dashicons.spin {
+    animation: dashicons-spin 1s infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes dashicons-spin {
+    0% {
+        transform: rotate( 0deg );
+    }
+    100% {
+        transform: rotate( 360deg );
+    }
+}

@@ -1,0 +1,19 @@
+.site {
+	.site-content {
+		// reverse the order of content and aside with row-reverse
+		flex-direction: row;
+		.content-area {
+			width: $size__site-main - $size__site-sidebar;
+			.site-main {
+			}
+		}
+		.widget-area {
+			overflow: hidden;
+			width: $size__site-sidebar;
+		}
+	}
+
+	.site-footer {
+		width: $size__site-main;
+	}
+}

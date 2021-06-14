@@ -1,0 +1,164 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+    @if not unitless($sizeValue) {
+        font-size: $sizeValue;
+        $sizeValue: $sizeValue/$font__size-base;
+    } @else {
+        font-size: $sizeValue * $font__size-base;
+    }
+    font-size: $sizeValue * 1rem;
+}
+// Center block
+@mixin center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+    content: "";
+    display: table;
+    table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+    clear: both;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+    width: $numberColumns*$column-unit;
+}
+
+@mixin breakpoint($point) {
+	@if not map-has-key($breakpoints, $point) {
+		@warn "You have provided a wrong breakpoint: #{$point}";
+	}
+	@else {
+		@media (map-get($breakpoints, $point)) {
+			@content;
+		}
+	}
+}
+
+@mixin for-block-editor() {
+    @if ($compiling-style == 'blocks') {
+        & {
+            @content;
+        }
+    }
+}
+
+@mixin print() {
+	@media print {
+		@content;
+	}
+}
+
+@mixin make-row() {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+@mixin make-column($columns) {
+    overflow: hidden;
+    position: relative;
+    @include column-width($columns);
+    box-sizing: border-box;
+    min-height: 1px;
+}
+
+@mixin flex-container($direction: row, $justify: flex-start, $align: stretch) {
+	display: flex;
+	flex-direction: $direction;
+	justify-content: $justify;
+	align-items: $align;
+}
+
+@mixin colors-on-background($bg-color) {
+    background-color: $bg-color;
+    @if (lightness($bg-color) < 50) {
+        p,
+        a,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: $color__text-light;
+        }
+        input {
+            background-color: transparent;
+            color: $color__text-light;
+            border-color: $color__text-light;
+            &::placeholder {
+                color: $color__text-light;
+                opacity: 0.7;
+            }
+        }
+        a {
+            color: $color__text-light;
+            &:visited {
+                color: $color__text-light;
+            }
+        }
+    }
+}
+
+@mixin align-content-v-center() {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@mixin target-explorer() {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        /* IE10+ CSS styles go here */
+        @content;
+    }
+}
+
+@mixin dark-color-scheme() {
+	@media (prefers-color-scheme: dark) {
+		@content;
+	}
+}
+
+@mixin button-reset() {
+	background-color: transparent;
+	border: none;
+	&:hover,
+	&:active,
+	&:focus {
+		outline: none;
+	}
+}
+
+@mixin responsive-dimension($breakpoints, $property) {
+	@each $bp, $value in $breakpoints {
+		@include breakpoint($bp) {
+			#{$property}: $value;
+		}
+	}
+}
+
+@mixin make-button() {
+	border: 1px solid $color__border-button;
+	border-radius: 3px;
+	background: $color__background-button;
+	color: rgba(0, 0, 0, .8);
+	@include font-size(0.75);
+	line-height: 1;
+	padding: .6em 1em .4em;
+	&:hover {
+		border-color: $color__border-button-hover;
+	}
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+	}
+}

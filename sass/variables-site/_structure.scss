@@ -1,0 +1,15 @@
+$size__site-main: 100%;
+$size__site-sidebar: 25%;
+$button-total-height: 3.6em;
+$navbar_height: 60px;
+$admin-bar-height: 32px;
+$under-sm-h-padding: strip-unit($column-unit) * 1vw;
+$over-sm-h-padding: 2*$under-sm-h-padding;
+$basic-padding-v: 40px;
+$block-basic-padding: $basic-padding-v 0;
+$z-index-bottom: 0;
+$z-index-level-2: 2;
+$z-index-level-3: 3;
+$z-index-level-4: 10;
+$z-index-level-5: 100;
+$z-index-top: 100000;

@@ -1,0 +1,50 @@
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+    color: $color__text-input;
+    border: 1px solid $color__border-input;
+    border-radius: 3px;
+    padding: 3px;
+    &:focus {
+        color: $color__text-input-focus;
+    }
+    &::placeholder {
+        color: $color__primary;
+        opacity: 0.7;
+    }
+}
+
+select {
+    position: relative;
+    border: 1px solid $color__primary;
+    width: 100%;
+    padding: 3px 15px;
+    height: calc(#{$button-total-height} - 4px);
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    background: none; //reset the background
+    background-position: 98% center;
+    background-repeat: no-repeat;
+    background-image: url('images/chevron-down.svg');
+    &:focus {
+        outline: none;
+    }
+}
+
+textarea {
+    width: 100%;
+}

@@ -1,0 +1,45 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+    font-size: $font__size-base;
+    /*@include breakpoint(md) {
+        font-size: $font__size-base*0.8;
+    }*/
+}
+
+body {
+	background: $color__background-body;
+	/* Fallback for when there is no custom background color defined. */
+	height: 100%;
+}
+
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+.site {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    min-height: 100%;
+    overflow: hidden;
+    .site-content {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        .content-area {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            .site-main {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+}

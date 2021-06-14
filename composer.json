@@ -1,0 +1,12 @@
+{
+  "name": "crispybacon/mokilla",
+  "description": "",
+  "autoload": {
+    "psr-4": {
+      "crispybacon\\mokilla\\": "src/"
+    }
+  },
+  "config": {
+	"optimize-autoloader": true
+  }
+}
