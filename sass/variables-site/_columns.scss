@@ -1,3 +1,5 @@
+@use "sass:math";
+
 $column-max-number: 12;
-$column-unit: decimal-floor(100/$column-max-number, 2) * 1%;
+$column-unit: decimal-floor(math.div(100, $column-max-number), 2) * 1%;
 $columns__margin: 3.8%;

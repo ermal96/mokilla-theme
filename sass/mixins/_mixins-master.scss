@@ -1,8 +1,10 @@
 // Rem output with px fallback
+@use "sass:math";
+
 @mixin font-size($sizeValue: 1) {
     @if not unitless($sizeValue) {
         font-size: $sizeValue;
-        $sizeValue: $sizeValue/$font__size-base;
+        $sizeValue: math.div($sizeValue, $font__size-base);
     } @else {
         font-size: $sizeValue * $font__size-base;
     }
