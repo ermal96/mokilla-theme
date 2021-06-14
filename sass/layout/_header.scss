@@ -1,0 +1,34 @@
+.site-header {
+  border-bottom: 1px solid $color__gray-light;
+  position: relative;
+  &-wrapper {
+    height: $header_height;
+    @include make-column(11);
+    margin: 0 auto;
+
+    @include flex-container(row, space-between, center);
+
+    .site-branding {
+      @include flex-container(row, space-between, center);
+      margin-right: 3rem;
+
+      button {
+        background: none;
+        border: none;
+        outline: none;
+        font-size: 1.5rem;
+        margin-right: 1.5rem;
+        cursor: pointer;
+      }
+
+      a {
+        width: 17rem;
+        display: block;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

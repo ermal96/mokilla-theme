@@ -45,7 +45,19 @@ if ( ! function_exists( 'mokilla_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'mokilla' ),
+				'menu-primary' => esc_html__( 'Primary Menu', 'mokilla' ),
+			)
+		);
+
+		register_nav_menus(
+			array(
+				'menu-side' => esc_html__( 'Side Menu', 'mokilla' ),
+			)
+		);
+
+		register_nav_menus(
+			array(
+				'menu-mini' => esc_html__( 'Mini Menu', 'mokilla' ),
 			)
 		);
 
@@ -147,12 +159,12 @@ function mokilla_scripts() {
 	wp_enqueue_style( 'dashicons' );
 	wp_enqueue_script(
 		'mokilla-scripts',
-		get_template_directory_uri() . '/scripts.min.js',
+		get_template_directory_uri() . '/js/side-menu.js',
 		array(
 			'jquery',
 			'customize-preview'
 		),
-		filemtime(get_template_directory() . '/scripts.min.js'),
+		filemtime(get_template_directory() .  '/js/side-menu.js'),
 		true
 	);
 	wp_localize_script(

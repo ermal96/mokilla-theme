@@ -13,7 +13,7 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
@@ -23,37 +23,76 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mokilla' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content', 'mokilla'); ?></a>
 
 	<header id="masthead" class="site-header">
+
+	<div class="side-navigation">
+
+	<button id="close-side-menu"><i class="icon-close" ></i></button>
+
+	<?php
+            wp_nav_menu(array(
+                'theme_location' => 'menu-side',
+                'menu_id'        => 'side-menu',
+            ));
+            ?>
+
+
+		<div class="side-navigation-bookmark">
+			<p>bookmark (0)</p>
+		</div>
+
+		<?php  if (get_option('mokilla-social-links')) : ?>
+
+			<div class="side-navigation-socials"> 
+
+			<?php  foreach (get_option('mokilla-social-links') as $key => $option) : ?>
+
+				<a target="_blank" href="<?php echo $option ?>"> <i class="icon-<?php echo $key?>"> </i>  <span><?php echo $key; ?></span></a>
+
+			<?php endforeach; ?>
+
+			</div>
+
+
+		<?php endif; ?>
+		
+	</div>
+
+	<div class="site-header-wrapper">
 		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$mokilla_description = get_bloginfo( 'description', 'display' );
-			if ( $mokilla_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $mokilla_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
+			<button id="open-side-menu"><i class="icon-menu" ></i></button>
+			<?php the_custom_logo(); ?>
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'mokilla' ); ?></button>
+		<nav class="main-navigation">
 			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
+            wp_nav_menu(array(
+                'theme_location' => 'menu-primary',
+                'menu_id'        => 'primary-menu',
+            ));
+            ?>
+		</nav>
+
+		<nav class="mini-navigation">
+			<?php
+            wp_nav_menu(array(
+                'theme_location' => 'menu-mini',
+                'menu_id'        => 'mini-menu',
+            ));
+            ?>
+
+
+		<p>bookmark (1)</p>
+
+		<button><i class="icon-search"></i></button>
+
+		</nav>
+
+
+			</div>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

@@ -1,16 +1,20 @@
 html {
     box-sizing: border-box;
     height: 100%;
-    font-size: $font__size-base;
-    /*@include breakpoint(md) {
-        font-size: $font__size-base*0.8;
-    }*/
+    font-size: 62.6%;
+
+
+    @include breakpoint(md) {
+        font-size: 55%;
+    }
 }
 
 body {
 	background: $color__background-body;
 	/* Fallback for when there is no custom background color defined. */
 	height: 100%;
+    font-weight: 400;
+    font-size: 1.6rem;
 }
 
 *,
