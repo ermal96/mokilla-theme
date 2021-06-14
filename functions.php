@@ -157,10 +157,10 @@ function mokilla_scripts() {
 	);
 	wp_localize_script(
 		'mokilla-scripts',
-		'CbwptAjax',
+		'mkwpAjax',
 		array(
 			'ajaxurl'  => admin_url( 'admin-ajax.php' ),
-			'security' => wp_create_nonce( 'cbwpt-special-string-for%ajax' ),
+			'security' => wp_create_nonce( 'mkwp-special-string-for%ajax' ),
 		)
 	);
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -266,7 +266,7 @@ function stop_heartbeat() {
 add_action( 'admin_notices', 'id_WPSE_114111' ); */
 
 function mokilla_modify_footer() {
-	echo 'Engineered by <a href="mailto:support@crispybacon.it">Crispy Bacon</a>';
+	echo 'Engineered by <a href="mailto:v.serxhio@gmail.com">Crispy Bacon</a>';
 }
 
 add_filter( 'admin_footer_text', 'mokilla_modify_footer' );

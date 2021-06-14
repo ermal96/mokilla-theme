@@ -1,9 +1,9 @@
 {
-  "name": "crispybacon/mokilla",
+  "name": "mokilla/mokilla",
   "description": "",
   "autoload": {
     "psr-4": {
-      "crispybacon\\mokilla\\": "src/"
+      "mokilla\\mokilla\\": "src/"
     }
   },
   "config": {
