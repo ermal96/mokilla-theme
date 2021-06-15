@@ -172,6 +172,16 @@
   /* '' */
   /* '' */
   /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
+  /* '' */
   /*--------------------------------------------------------------
   # Elements
   --------------------------------------------------------------*/
@@ -491,6 +501,36 @@
 .edit-post-visual-editor .icon-search:before {
   content: "";
 }
+.edit-post-visual-editor .icon-bookmark:before {
+  content: "";
+}
+.edit-post-visual-editor .icon-arrow-top:before {
+  content: "";
+}
+.edit-post-visual-editor .icon-arrow-right:before {
+  content: "";
+}
+.edit-post-visual-editor .icon-arrow-long-right:before {
+  content: "";
+}
+.edit-post-visual-editor .icon-arrow-long-left:before {
+  content: "";
+}
+.edit-post-visual-editor .icon-clock:before {
+  content: "";
+}
+.edit-post-visual-editor .icon-grid:before {
+  content: "";
+}
+.edit-post-visual-editor .icon-hamburger:before {
+  content: "";
+}
+.edit-post-visual-editor .icon-down:before {
+  content: "";
+}
+.edit-post-visual-editor .icon-share:before {
+  content: "";
+}
 .edit-post-visual-editor h1,
 .edit-post-visual-editor h2,
 .edit-post-visual-editor h3,
@@ -521,7 +561,6 @@
   font-size: 2rem;
   font-weight: 600;
   line-height: 1em;
-  padding: 0 5vw;
 }
 @media (max-width: 767px) {
   .edit-post-visual-editor h3 {
@@ -732,7 +771,7 @@
 .edit-post-visual-editor .side-navigation ul li a {
   color: #231F20;
   text-decoration: none;
-  padding: 0 2rem;
+  padding: 0 1.2rem;
 }
 .edit-post-visual-editor .main-navigation {
   display: none;
@@ -770,7 +809,7 @@
 .edit-post-visual-editor .side-navigation {
   display: none;
   position: absolute;
-  top: 72px;
+  top: 73px;
   padding-left: 2.7%;
   padding-right: 2.7%;
   min-height: 100vh;
@@ -779,6 +818,7 @@
   z-index: 10;
   font-size: 1.4rem;
   text-transform: uppercase;
+  background-color: #FFFFFF;
 }
 .edit-post-visual-editor .side-navigation.open-slide {
   display: block;
@@ -906,10 +946,10 @@
   }
 }
 .edit-post-visual-editor body {
-  background: #E5E5E5;
+  background: #FFFFFF;
   /* Fallback for when there is no custom background color defined. */
   height: 100%;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1.6rem;
 }
 .edit-post-visual-editor *,
@@ -940,6 +980,136 @@
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+}
+.edit-post-visual-editor .blog-grid {
+  overflow: hidden;
+  position: relative;
+  width: 91.63%;
+  box-sizing: border-box;
+  min-height: 1px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "first  second" "first  third";
+  grid-gap: 3rem;
+}
+@media (max-width: 767px) {
+  .edit-post-visual-editor .blog-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: "first" "second" "third";
+  }
+}
+.edit-post-visual-editor .blog-grid-item {
+  text-decoration: none;
+  color: #231F20;
+}
+.edit-post-visual-editor .blog-grid-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.edit-post-visual-editor .blog-grid-item-row p {
+  margin: 1rem 0;
+}
+.edit-post-visual-editor .blog-grid-item-row .cat-name {
+  color: #9A1B34;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.edit-post-visual-editor .blog-grid-item:nth-child(1) {
+  position: relative;
+  grid-area: first;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+}
+@media (max-width: 767px) {
+  .edit-post-visual-editor .blog-grid-item:nth-child(1) {
+    min-height: 40rem;
+  }
+}
+.edit-post-visual-editor .blog-grid-item:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, #ffffff00, #c0c0c100, #83858617, #4d4f4e3b, #1d1e1c69);
+}
+.edit-post-visual-editor .blog-grid-item:nth-child(1) h3 {
+  font-size: 3.6rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  line-height: 5rem;
+  margin: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.edit-post-visual-editor .blog-grid-item:nth-child(1) h3 i {
+  margin-left: 3rem;
+}
+@media (max-width: 767px) {
+  .edit-post-visual-editor .blog-grid-item:nth-child(1) h3 {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+  }
+}
+.edit-post-visual-editor .blog-grid-item:nth-child(1) .blog-grid-item-row {
+  justify-content: flex-start;
+}
+.edit-post-visual-editor .blog-grid-item:nth-child(1) .cat-name,
+.edit-post-visual-editor .blog-grid-item:nth-child(1) .post-date {
+  color: #FFFFFF;
+  z-index: 1;
+  margin-right: 3rem;
+}
+.edit-post-visual-editor .blog-grid-item:nth-child(2) {
+  grid-area: second;
+}
+.edit-post-visual-editor .blog-grid-item:nth-child(3) {
+  grid-area: third;
+}
+@media (max-width: 767px) {
+  .edit-post-visual-editor .blog-grid-item:nth-child(2), .edit-post-visual-editor .blog-grid-item:nth-child(3) {
+    display: grid;
+    grid-template-columns: 1.3fr 2fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .edit-post-visual-editor .blog-grid-item:nth-child(2) img, .edit-post-visual-editor .blog-grid-item:nth-child(3) img {
+    grid-row: 1/3;
+  }
+  .edit-post-visual-editor .blog-grid-item:nth-child(2) p, .edit-post-visual-editor .blog-grid-item:nth-child(3) p {
+    margin: 0;
+  }
+  .edit-post-visual-editor .blog-grid-item:nth-child(2) h3, .edit-post-visual-editor .blog-grid-item:nth-child(3) h3 {
+    padding: 0 2rem !important;
+    font-size: 1.4rem !important;
+    border-bottom: none !important;
+  }
+}
+@media (max-width: 767px) and (max-width: 767px) {
+  .edit-post-visual-editor .blog-grid-item:nth-child(2) .blog-grid-item-row, .edit-post-visual-editor .blog-grid-item:nth-child(3) .blog-grid-item-row {
+    padding: 0 2rem;
+    align-items: flex-start;
+  }
+}
+.edit-post-visual-editor .blog-grid-item:nth-child(2) h3, .edit-post-visual-editor .blog-grid-item:nth-child(3) h3 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1.9rem;
+  margin: 0;
+  padding: 1.5rem 0;
+  color: #30557C;
+  border-bottom: 1px solid #DAD9D5;
 }
 .edit-post-visual-editor .site-header {
   border-bottom: 1px solid #DAD9D5;
