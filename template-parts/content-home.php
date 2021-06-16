@@ -7,12 +7,11 @@
  * @package Mokilla
  */
 
- $posts = get_posts(array(
-     'numberposts' => 3
- ));
+ $grid_posts = get_posts(array('numberposts' => 3 ));
 
+ $posts = get_posts(array('numberposts' => 4 ));
 
-
+ $categories = get_categories();
 
 ?>
 
@@ -22,38 +21,67 @@
 	
 	<div class="blog-grid">
  		<?php
-          foreach ($posts as $key => $post): ?>
-
-
-			<a href="<?php echo get_the_permalink($post->ID) ?>" style="background: url(<?php if ($key === array_key_first($posts)) {
-              echo wp_get_attachment_url(get_post_thumbnail_id($post->ID));
-          } ?>)" class="blog-grid-item">
-
-				<?php if ($key !== array_key_first($posts)): ?>
-				<img src="<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>" alt="<?php echo $post->post_title; ?>">
-				<?php endif; ?>
-
-				<div class="blog-grid-item-row">
-				<p class="cat-name"><?php echo get_the_category($post->ID)[0]->name; ?></p>
-				<p class="post-date"><?php echo get_the_date('F j, Y', $post->ID); ?></p>
-				</div>
-				<h3>
-					<span><?php echo $post->post_title; ?></span>
-
-					<?php if ($key === array_key_first($posts)): ?>
-						<i class="icon-arrow-top"></i>
-					<?php endif; ?>
-				
-				</h3>
-			
-			</a>
-
-
-		 <?php
+          foreach ($grid_posts as $key => $post):
+			set_query_var( 'grid_posts', $grid_posts );
+			set_query_var( 'key', $key );
+            get_template_part('components/post-item-grid');
           endforeach;
           ?>
 	</div>
 
+	<div class="articles-sidebar">
+
+		<div class="articles-sidebar-header">
+			<h2><?php _e('latest recipes', 'mokilla') ?></h2>
+			<?php get_template_part('components/post-header-filter'); ?>
+			<a class="show-all-link" href="#"><?php _e('view all', 'mokilla') ?><i class="icon-arrow-top"></i></a>
+		</div>
+
+		<div class="articles-grid">
+			<div class="articles-grid-items">
+
+			<?php
+
+                foreach ($posts as $key => $post):
+                    get_template_part('components/post-item-box');
+                endforeach;
+            ?>
+
+			</div>
+
+			<?php get_sidebar(); ?>
+
+		</div>
+	
+	
+	</div>
+
+	<div class="categories-slide">
+
+		<div class="categories-slide-header">
+		
+			<h2 class="categories-slide-header-title"><?php _e('Categories', 'mokilla') ?></h2>
+		
+		</div>
+
+		<div class="categories-slide-slider">
+		
+
+			<?php foreach ($categories as $category) : ?>
+
+					<a class="categories-slide-slider-slide" >
+						<img src="<?= get_field('mokilla_category_image', $category) ?>" alt="<?= $category->name; ?>">
+						<div class="slide-content">
+							<p><?= $category->name; ?></p>
+							<i class="icon-arrow-right"></i>
+						</div>
+					</a>
+				
+			<?php endforeach; ?>
+	
+	</div>
+
+	</div>
 
 	</div><!-- .entry-content -->
 

@@ -283,6 +283,37 @@ function mokilla_modify_footer() {
 
 add_filter( 'admin_footer_text', 'mokilla_modify_footer' );
 
+
+
+function filter_posts_template() {
+    $catSlug = $_POST['category'];
+
+    $posts = new WP_Query([
+      'posts_per_page' => 4,
+      'category_name' => $catSlug,
+    ]);
+
+
+  
+    if($posts->have_posts()) {
+      while($posts->have_posts()) : $posts->the_post();
+       
+      	echo get_template_part('components/post-item-box');
+
+  	  endwhile;
+	  wp_reset_postdata();
+    }
+
+    die();
+
+}
+
+add_action('wp_ajax_filter_posts', 'filter_posts_template');
+add_action('wp_ajax_nopriv_filter_posts', 'filter_posts_template');
+
+
+
+
 /**
 * Include classes with Composer.
 */
