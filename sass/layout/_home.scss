@@ -335,6 +335,15 @@
       margin: 0 -3rem;
     }
 
+    @include breakpoint(sm) {
+      .slick-slide {
+        margin: 0 1rem;
+      }
+      .slick-list {
+        margin: 0 -1rem;
+      }
+    }
+
     .slick-arrow {
       position: absolute;
       top: -6.3rem;
