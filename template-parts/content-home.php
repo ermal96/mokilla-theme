@@ -19,16 +19,19 @@
 
 	<div class="entry-content">
 	
+	<!-- blog grid -->
 	<div class="blog-grid">
  		<?php
           foreach ($grid_posts as $key => $post):
-			set_query_var( 'grid_posts', $grid_posts );
-			set_query_var( 'key', $key );
+            set_query_var('grid_posts', $grid_posts);
+            set_query_var('key', $key);
             get_template_part('components/post-item-grid');
           endforeach;
           ?>
 	</div>
 
+
+	<!-- articles sidebar -->
 	<div class="articles-sidebar">
 
 		<div class="articles-sidebar-header">
@@ -56,31 +59,49 @@
 	
 	</div>
 
-	<div class="categories-slide">
 
-		<div class="categories-slide-header">
-		
-			<h2 class="categories-slide-header-title"><?php _e('Categories', 'mokilla') ?></h2>
-		
+	<!-- categories slide -->
+	<div class="home-slide">
+		<div class="home-slide-header">
+			<h2 class="home-slide-header-title"><?php _e('Categories', 'mokilla') ?></h2>
 		</div>
-
-		<div class="categories-slide-slider">
-		
-
+		<div class="home-slide-slider">
 			<?php foreach ($categories as $category) : ?>
 
-					<a class="categories-slide-slider-slide" >
+					<a class="home-slide-slider-slide" >
 						<img src="<?= get_field('mokilla_category_image', $category) ?>" alt="<?= $category->name; ?>">
 						<div class="slide-content">
 							<p><?= $category->name; ?></p>
 							<i class="icon-arrow-right"></i>
 						</div>
 					</a>
-				
 			<?php endforeach; ?>
-	
+		</div>
 	</div>
 
+
+	<!-- forum homepage -->
+	<div class="forum-homepage">
+		<div class="forum-homepage-header">
+			<h2><?= _e('FORUM', 'mokilla') ?></h2>
+			<a href="#"><?= _e('view all') ?> <i class="icon-arrow-top"></i></a>
+		</div>
+		<?php  echo do_shortcode(' [fmwp_forums /]') ?> 
+    </div>
+
+
+		<!-- categories slide -->
+	<div class="home-slide">
+		<div class="home-slide-header">
+			<h2 class="home-slide-header-title"><?php _e('carousel section', 'mokilla') ?></h2>
+		</div>
+		<div class="home-slide-slider">
+			<?php foreach ($posts as $post) :
+
+				get_template_part('components/post-item-box');
+					
+			 endforeach; ?>
+		</div>
 	</div>
 
 	</div><!-- .entry-content -->

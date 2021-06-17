@@ -6,10 +6,12 @@
 
     openSideMenu.click(function (e) {
       sideMenu.toggleClass('open-slide');
+      $('body').toggleClass('locked');
     });
 
     closeSideMenu.click(function () {
       sideMenu.removeClass('open-slide');
+      $('body').removeClass('locked');
     });
 
     $('.cat-list_item').on('click', function () {
@@ -31,7 +33,7 @@
       });
     });
 
-    $('.categories-slide-slider').slick({
+    $('.home-slide-slider').slick({
       slidesToShow: 4,
       responsive: [
         {

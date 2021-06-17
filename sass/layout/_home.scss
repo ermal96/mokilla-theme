@@ -308,9 +308,9 @@
   }
 }
 
-// categories slide
+// home slide
 
-.categories-slide {
+.home-slide {
   @include make-column(11);
 
   margin: 0 auto;
@@ -387,6 +387,106 @@
           justify-content: center;
         }
       }
+    }
+
+    .grid-item {
+
+      img {
+        min-height: 40rem;
+        object-fit: cover;
+      }
+      .grid-item-cat {
+        color: $color__accent;
+        margin: 1rem 0;
+      }
+  
+      .grid-item-title {
+        color: $color__primary;
+        margin: 0;
+        padding-bottom: 1rem;
+        text-transform: uppercase;
+        border-bottom: 1px solid $color__gray-light;
+        font-size: 1.6rem;
+        line-height: 1.9rem;
+      }
+  
+      .grid-item-excerpt, .grid-item-link {
+        display: none
+      }
+    }
+
+
+  }
+}
+
+
+
+
+
+// homepage forum
+
+.forum-homepage {
+
+
+  @include make-column(11);
+  margin: 8rem auto 0 auto;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3.2rem 0;
+    border-top: 1px solid $color__gray-light;
+
+    h2 {
+      text-transform: uppercase;
+      font-size: 3.2rem;
+      color: $color__primary;
+      margin: 0;
+    }
+
+    a {
+      text-transform: uppercase;
+      color: $color__accent;
+      text-decoration: none;
+      font-weight: 600;
+
+      i {
+        margin-left: 0.5rem;
+        font-size: 2rem;
+      }
+
+      &:visited {
+        color: $color__accent;
+      }
+    }
+  }
+
+  .fmwp-forums-list-head, .fmwp-forums-wrapper-heading {
+    display: none !important;
+  }
+
+
+
+  .fmwp-forums-wrapper {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 3rem;
+
+    @include breakpoint(md) {
+      grid-template-columns: 1fr;
+    }
+
+    .fmwp-forum-row {
+      border: 1px solid $color__gray-light;
+      padding: 2.5rem !important;
+    }
+
+    
+
+
+    .fmwp-forum-description {
+      display: none !important;
     }
   }
 }

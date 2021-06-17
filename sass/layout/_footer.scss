@@ -1,0 +1,29 @@
+.site-footer {
+    background-color: $color__primary;
+    color: $color__white;
+
+    .site-info {
+        @include make-column(11);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 6.4rem;
+
+        .info {
+            margin: 0;
+        }
+
+        .footer-socials {
+            a {
+                color: $color__white;
+                text-decoration: none;
+                margin: 0 1rem;
+
+                &:active {
+                    color: $color__white;
+                }
+            }
+        }
+    }
+}

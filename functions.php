@@ -142,6 +142,7 @@ function mokilla_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
 }
 
 add_action( 'widgets_init', 'mokilla_widgets_init' );
@@ -157,6 +158,15 @@ function mokilla_scripts() {
 		filemtime(get_template_directory() . '/style.css')
 	);
 	wp_enqueue_style( 'dashicons' );
+	wp_enqueue_script(
+		'slick-scripts',
+		get_template_directory_uri() . '/js/slick.min.js',
+		array(
+			'jquery',
+		),
+		filemtime(get_template_directory() .  '/js/slick.min.js'),
+		true
+	);
 	wp_enqueue_script(
 		'mokilla-scripts',
 		get_template_directory_uri() . '/js/side-menu.js',
