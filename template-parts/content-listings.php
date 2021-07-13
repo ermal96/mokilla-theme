@@ -20,25 +20,25 @@ use mokilla\mokilla_core_admin\PostTypeListings;
 
         <div class="meta">
             <?php if(get_field(PostTypeListings::ACF_EMAIL)):  ?>
-                <p><?= get_field(PostTypeListings::ACF_EMAIL) ?></p>
+                <p><i class="icon-mail"></i><?= get_field(PostTypeListings::ACF_EMAIL) ?></p>
             <?php endif; ?>
             
             <?php if(get_field(PostTypeListings::ACF_PHONE_NUMBER)):  ?>
-                <p><?= get_field(PostTypeListings::ACF_PHONE_NUMBER) ?></p>
+                <p><i class="icon-phone"></i><?= get_field(PostTypeListings::ACF_PHONE_NUMBER) ?></p>
             <?php endif; ?>
 
             <?php if(get_field(PostTypeListings::ACF_ADDRESS)):  ?>
-                <p><?= get_field(PostTypeListings::ACF_ADDRESS) ?></p>
+                <p><i class="icon-location"></i><?= get_field(PostTypeListings::ACF_ADDRESS) ?></p>
             <?php endif; ?>
 
             <?php if(get_field(PostTypeListings::ACF_WEBSITE)):  ?>
-                <p><?= get_field(PostTypeListings::ACF_WEBSITE) ?></p>
+                <p><i class="icon-website"></i><?= get_field(PostTypeListings::ACF_WEBSITE) ?></p>
             <?php endif; ?>
         </div>
 
         <footer class="meta">
         <?php if(get_field(PostTypeListings::ACF_PRICE)):  ?>
-                <p><span>$<?= get_field(PostTypeListings::ACF_PRICE) ?></span> / per order</p>
+                <p><span>$<?= get_field(PostTypeListings::ACF_PRICE); ?> </span>&nbsp; / per order</p>
             <?php endif; ?>
         </footer>
     </div>
