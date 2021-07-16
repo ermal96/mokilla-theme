@@ -56,3 +56,8 @@ body {
  border: none;
  outline: none;
 }
+
+.content {
+  @include make-column(11);
+  margin: 0 auto;
+}

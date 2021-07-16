@@ -1005,6 +1005,14 @@
   border: none;
   outline: none;
 }
+.edit-post-visual-editor .content {
+  overflow: hidden;
+  position: relative;
+  width: 91.63%;
+  box-sizing: border-box;
+  min-height: 1px;
+  margin: 0 auto;
+}
 .edit-post-visual-editor .blog-grid {
   overflow: hidden;
   position: relative;
@@ -1542,33 +1550,45 @@
 .edit-post-visual-editor .listing-container .filter-nav {
   border-bottom: 2px solid #DAD9D5;
   margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 50px;
+}
+.edit-post-visual-editor .listing-container .filter-nav button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.edit-post-visual-editor .listing-container .filter-nav button.active {
+  color: #9A1B34;
+}
+.edit-post-visual-editor .listing-container .filter-nav button i {
+  font-size: 14px;
 }
 .edit-post-visual-editor .listing-container .row {
   display: grid;
   grid-template-columns: 250px 1fr;
   grid-gap: 40px;
 }
-.edit-post-visual-editor .listing-container .row .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 30px;
-}
-.edit-post-visual-editor .listing-container .row .grid .content-listing {
+.edit-post-visual-editor .listing-container .row .content-listing {
   text-decoration: none;
   color: inherit;
   border: 1px solid #DAD9D5;
 }
-.edit-post-visual-editor .listing-container .row .grid .content-listing img {
+.edit-post-visual-editor .listing-container .row .content-listing img {
   height: 320px;
   object-fit: cover;
   width: 100%;
   margin: 0;
   padding: 0;
 }
-.edit-post-visual-editor .listing-container .row .grid .content-listing .content {
+.edit-post-visual-editor .listing-container .row .content-listing .content {
   padding: 20px;
 }
-.edit-post-visual-editor .listing-container .row .grid .content-listing .content .title {
+.edit-post-visual-editor .listing-container .row .content-listing .content .title {
   color: #30557C;
   text-transform: uppercase;
   margin: 0 0 10px 0;
@@ -1576,24 +1596,63 @@
   font-size: 16px;
   line-height: 1.4;
 }
-.edit-post-visual-editor .listing-container .row .grid .content-listing .content .meta p {
+.edit-post-visual-editor .listing-container .row .content-listing .content .meta p {
   font-size: 14px;
   display: flex;
   align-items: center;
 }
-.edit-post-visual-editor .listing-container .row .grid .content-listing .content .meta p i {
+.edit-post-visual-editor .listing-container .row .content-listing .content .meta p i {
   color: #9A1B34;
   margin-right: 10px;
 }
-.edit-post-visual-editor .listing-container .row .grid .content-listing .content footer {
+.edit-post-visual-editor .listing-container .row .content-listing .content footer {
   border-top: 1px solid #DAD9D5;
 }
-.edit-post-visual-editor .listing-container .row .grid .content-listing .content footer p {
+.edit-post-visual-editor .listing-container .row .content-listing .content footer p {
   color: #30557C;
   margin: 20px 0 0 0;
 }
-.edit-post-visual-editor .listing-container .row .grid .content-listing .content footer p span {
+.edit-post-visual-editor .listing-container .row .content-listing .content footer p span {
   font-weight: 600;
+}
+.edit-post-visual-editor .listing-container .row .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+}
+.edit-post-visual-editor .listing-container .row .list {
+  display: block;
+}
+.edit-post-visual-editor .listing-container .row .list .content-listing {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  margin-bottom: 30px;
+  position: relative;
+}
+.edit-post-visual-editor .listing-container .row .list .content-listing .title {
+  max-width: 80%;
+}
+.edit-post-visual-editor .listing-container .row .list .content-listing .meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 30px;
+}
+.edit-post-visual-editor .listing-container .row .list .content-listing .meta p {
+  margin-bottom: 0;
+}
+.edit-post-visual-editor .listing-container .row .list .content-listing footer.meta {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border-top: 0;
+  display: flex;
+  margin-top: 0;
+}
+.edit-post-visual-editor .listing-container .row .list .content-listing footer.meta p {
+  margin: 0;
+}
+.edit-post-visual-editor .listing-container .row .list .content-listing img {
+  height: 180px;
 }
 .edit-post-visual-editor .page-content .wp-smiley,
 .edit-post-visual-editor .entry-content .wp-smiley,

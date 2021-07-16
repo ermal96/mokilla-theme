@@ -17,7 +17,7 @@ use mokilla\mokilla_core_admin\PostTypeListings;
 
     <div class="content">
         <h3 class="title"><?php the_title(); ?></h3>
-
+ 
         <div class="meta">
             <?php if(get_field(PostTypeListings::ACF_EMAIL)):  ?>
                 <p><i class="icon-mail"></i><?= get_field(PostTypeListings::ACF_EMAIL) ?></p>

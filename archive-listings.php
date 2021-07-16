@@ -21,7 +21,14 @@ get_header();
 			</header><!-- .page-header -->
 
 			<nav class="filter-nav">
-			filter nav
+				
+			<button class="btn-grid-view active">
+				<i class="icon-grid"></i>
+			</button>
+
+			<button class="btn-list-view">
+				<i class="icon-hamburger"></i>
+			</button>
 			</nav>
 
 			<div class="row">
@@ -29,7 +36,7 @@ get_header();
 				<div class="col side">
 					side
 				</div>
-				<div class="col grid content">
+				<div class="col grid listing-row-content">
 				<?php
 					while ( have_posts() ) :
 						the_post();

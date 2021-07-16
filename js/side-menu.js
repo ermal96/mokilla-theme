@@ -75,5 +75,36 @@
     $(window).resize(function () {
       slickAarrows();
     });
+
+
+
+
+  // listing
+  var btnGrid = $('.btn-grid-view');
+  var btnList = $('.btn-list-view');
+  var rowContent = $('.listing-row-content');
+
+
+    btnGrid.click(function() {
+      btnList.removeClass('active');
+      btnGrid.addClass('active');
+      rowContent.removeClass('list');
+      rowContent.addClass('grid');
+    })
+
+
+    btnList.click(function() {
+      btnGrid.removeClass('active');
+      btnList.addClass('active');
+      rowContent.removeClass('grid');
+      rowContent.addClass('list');
+    })
+
+
+
+
+
+
   });
+
 })(jQuery);
