@@ -53,6 +53,10 @@ get_header();
 										<p><i class="icon-website"></i><?= get_field(PostTypeListings::ACF_WEBSITE) ?></p>
 									<?php endif; ?>
 								</div>
+								<h3>Availability Time</h3>
+								<div class="box">
+									
+								</div>
                             </div>
 
                         </div>
