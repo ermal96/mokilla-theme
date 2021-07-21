@@ -34,7 +34,7 @@ get_header();
 			<div class="row">
 			
 				<div class="col side">
-					side
+				<?php do_action('show_beautiful_filters'); ?>
 				</div>
 				<div class="col grid listing-row-content">
 				<?php
@@ -42,9 +42,11 @@ get_header();
 						the_post();
 						get_template_part( 'template-parts/content', get_post_type() );
 
-					endwhile;
+					endwhile; ?>
 
-					the_posts_navigation();
+				</div>
+
+				<?php	
 
 				else :
 
@@ -52,10 +54,11 @@ get_header();
 
 				endif;
 				?>
-				</div>
+				
 			
 			</div>
 			
+			<?php  the_posts_pagination( array( 'mid_size'=>3 ) ); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
