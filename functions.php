@@ -322,6 +322,13 @@ add_action('wp_ajax_filter_posts', 'filter_posts_template');
 add_action('wp_ajax_nopriv_filter_posts', 'filter_posts_template');
 
 
+function modify_filter_button($string){
+
+    return 'Search';
+}
+
+add_filter('beautiful_filters_apply_button', 'modify_filter_button', 10, 1);
+
 
 
 

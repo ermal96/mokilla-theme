@@ -1013,6 +1013,14 @@
   min-height: 1px;
   margin: 0 auto;
 }
+.edit-post-visual-editor .container {
+  overflow: hidden;
+  position: relative;
+  width: 91.63%;
+  box-sizing: border-box;
+  min-height: 1px;
+  margin: 0 auto;
+}
 .edit-post-visual-editor .blog-grid {
   overflow: hidden;
   position: relative;
@@ -1546,6 +1554,7 @@
 }
 .edit-post-visual-editor .listing-container .page-header h1 {
   color: #30557C;
+  text-transform: uppercase;
 }
 .edit-post-visual-editor .listing-container .filter-nav {
   border-bottom: 2px solid #DAD9D5;
@@ -1619,6 +1628,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
+  margin-bottom: 50px;
 }
 .edit-post-visual-editor .listing-container .row .list {
   display: block;
@@ -1653,6 +1663,66 @@
 }
 .edit-post-visual-editor .listing-container .row .list .content-listing img {
   height: 180px;
+}
+.edit-post-visual-editor .listing-container nav.navigation.pagination {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.edit-post-visual-editor .listing-container nav.navigation.pagination .nav-links span {
+  font-weight: 600;
+  font-size: 16px;
+  color: #30557C;
+  padding: 5px;
+}
+.edit-post-visual-editor .listing-container nav.navigation.pagination .nav-links a {
+  text-decoration: none;
+  color: #30557C;
+  padding: 5px;
+}
+.edit-post-visual-editor .listing-container nav.navigation.pagination .nav-links .next.page-numbers, .edit-post-visual-editor .listing-container nav.navigation.pagination .nav-links .prev.page-numbers {
+  display: none;
+}
+.edit-post-visual-editor .listing-container-single .row {
+  grid-template-columns: 4fr 1fr;
+}
+.edit-post-visual-editor .listing-container-single .row .thumbnail img {
+  height: 450px;
+  object-fit: cover;
+  width: 100%;
+}
+.edit-post-visual-editor .listing-container-single .row .box {
+  border: 1px solid #DAD9D5;
+  padding: 20px;
+}
+.edit-post-visual-editor .listing-container-single .row .box p {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+.edit-post-visual-editor .listing-container-single .row .box p i {
+  color: #9A1B34;
+  margin-right: 10px;
+}
+.edit-post-visual-editor #beautiful-taxonomy-filters-listings form .beautiful-taxonomy-filters-label {
+  display: none;
+}
+.edit-post-visual-editor #beautiful-taxonomy-filters-listings form .beautiful-taxonomy-filters-button {
+  display: block;
+  background-color: #30557C;
+  color: #FFFFFF;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+}
+.edit-post-visual-editor #beautiful-taxonomy-filters-listings form .beautiful-taxonomy-filters-select {
+  border: 1px solid #DAD9D5;
+  margin-bottom: 20px;
+  height: 50px;
+  background-position: 94% center;
+  font-size: 14px;
 }
 .edit-post-visual-editor .page-content .wp-smiley,
 .edit-post-visual-editor .entry-content .wp-smiley,

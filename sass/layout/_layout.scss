@@ -61,3 +61,9 @@ body {
   @include make-column(11);
   margin: 0 auto;
 }
+
+
+.container {
+  @include make-column(11);
+  margin: 0 auto;
+}
