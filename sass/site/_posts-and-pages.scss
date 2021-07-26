@@ -20,3 +20,33 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+
+.container {
+	@include make-column(11);
+	margin: 0 auto;
+}
+
+.entry-title-post{
+		color: $color__primary;
+		text-transform: uppercase;
+}
+
+.entry-content-post-single {
+	display: grid;
+	grid-template-columns: 1fr 250px;
+	grid-gap: 35px;
+	img {
+		width: 100%;
+	}
+}
+
+.box {
+	border: 1px solid $color__gray-light;
+	padding: 20px;
+	margin-bottom: 50px;
+	.accent {
+	  color: $color__accent;
+	}
+
+  }

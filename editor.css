@@ -1524,6 +1524,34 @@
   clear: both;
   margin: 0 0 1.5em;
 }
+.edit-post-visual-editor .container {
+  overflow: hidden;
+  position: relative;
+  width: 91.63%;
+  box-sizing: border-box;
+  min-height: 1px;
+  margin: 0 auto;
+}
+.edit-post-visual-editor .entry-title-post {
+  color: #30557C;
+  text-transform: uppercase;
+}
+.edit-post-visual-editor .entry-content-post-single {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-gap: 35px;
+}
+.edit-post-visual-editor .entry-content-post-single img {
+  width: 100%;
+}
+.edit-post-visual-editor .box {
+  border: 1px solid #DAD9D5;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+.edit-post-visual-editor .box .accent {
+  color: #9A1B34;
+}
 .edit-post-visual-editor .comment-content a {
   word-wrap: break-word;
 }

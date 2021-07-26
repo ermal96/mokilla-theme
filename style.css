@@ -1616,6 +1616,38 @@ body.locked {
   margin: 0 0 1.5em;
 }
 
+.container {
+  overflow: hidden;
+  position: relative;
+  width: 91.63%;
+  box-sizing: border-box;
+  min-height: 1px;
+  margin: 0 auto;
+}
+
+.entry-title-post {
+  color: #30557C;
+  text-transform: uppercase;
+}
+
+.entry-content-post-single {
+  display: grid;
+  grid-template-columns: 1fr 250px;
+  grid-gap: 35px;
+}
+.entry-content-post-single img {
+  width: 100%;
+}
+
+.box {
+  border: 1px solid #DAD9D5;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+.box .accent {
+  color: #9A1B34;
+}
+
 .comment-content a {
   word-wrap: break-word;
 }
