@@ -1640,9 +1640,18 @@ body.locked {
   min-height: 1px;
   margin: 0 auto;
 }
+.listing-container hr {
+  height: 1px;
+  margin: 0;
+  background: #DAD9D5;
+}
+.listing-container .primary {
+  color: #30557C;
+  font-weight: 600;
+}
 .listing-container .page-header {
   margin-top: 50px;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 .listing-container .page-header p span {
   font-weight: 600;
@@ -1782,13 +1791,71 @@ body.locked {
   grid-template-columns: 4fr 1fr;
 }
 .listing-container-single .row .thumbnail img {
-  height: 450px;
+  height: 550px;
   object-fit: cover;
   width: 100%;
+}
+.listing-container-single .row .tags-row {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+}
+.listing-container-single .row .tags-row button {
+  background: none;
+  margin-right: 16px;
+  padding: 7px 24px;
+  outline: none;
+  font-size: 14px;
+}
+.listing-container-single .row .tags-row button.accent {
+  border: 1px solid #9A1B34;
+  color: #9A1B34;
+}
+.listing-container-single .row .tags-row button.dark {
+  border: 1px solid #000;
+  color: #000;
+}
+.listing-container-single .row .tags-row button.primary {
+  border: 1px solid #30557C;
+  color: #30557C;
+}
+.listing-container-single .row .border-card {
+  border-bottom: 1px solid #DAD9D5;
+  margin-bottom: 36px;
+  padding-bottom: 80px;
+}
+.listing-container-single .row .border-card .flex-row {
+  display: flex;
+}
+.listing-container-single .row .border-card .flex-row p {
+  margin-right: 60px;
+}
+.listing-container-single .row .border-card .flex-row p span {
+  font-weight: 600;
+}
+.listing-container-single .row .border-card h2 {
+  color: #30557C;
+  text-transform: uppercase;
+  font-size: 32px;
+  margin-top: 60px;
+}
+.listing-container-single .row .box-title {
+  text-transform: uppercase;
+  color: #30557C;
+  margin-top: 0;
 }
 .listing-container-single .row .box {
   border: 1px solid #DAD9D5;
   padding: 20px;
+  margin-bottom: 50px;
+}
+.listing-container-single .row .box .flex-bet {
+  justify-content: space-between;
+  color: #30557C;
+  font-weight: 600;
+}
+.listing-container-single .row .box .accent {
+  color: #9A1B34;
 }
 .listing-container-single .row .box p {
   font-size: 14px;
