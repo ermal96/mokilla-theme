@@ -7,13 +7,18 @@
  * @package Mokilla
  */
 use mokilla\mokilla_core_admin\PostTypeListings;
+
+$posts = get_posts(array(
+    'numberposts' => 4,
+))
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
     <header class="entry-header">
         <p><span>FRONT PAGE</span> >> INDIVIDUAL LISTING PAGE</p>
-		<?php the_title( '<h1 class="entry-title-post">', '</h1>' ); ?>
+		<?php the_title('<h1 class="entry-title-post">', '</h1>'); ?>
 	</header><!-- .entry-header -->
 
 
@@ -25,14 +30,51 @@ use mokilla\mokilla_core_admin\PostTypeListings;
         </div>
         <div>
         <div class="box">
-			<?php if(get_field(PostTypeListings::ACF_USER_NAME, 'user_' . get_the_author_meta('ID'))):  ?>
-				<p class="primary"><?= get_field(PostTypeListings::ACF_USER_NAME, 'user_' . get_the_author_meta('ID')) ?></p>
-			<?php endif; ?>
-			<?php if(get_field(PostTypeListings::ACF_USER_DESCRIPTION, 'user_' . get_the_author_meta('ID'))):  ?>
+			<div class="user-info">
+				<?php if (get_field(PostTypeListings::ACF_USER_IMAGE, 'user_' . get_the_author_meta('ID'))):  ?>
+					<img src="<?= get_field(PostTypeListings::ACF_USER_IMAGE, 'user_' . get_the_author_meta('ID')) ?>">
+				<?php endif; ?>
+				<?php if (get_field(PostTypeListings::ACF_USER_NAME, 'user_' . get_the_author_meta('ID'))):  ?>
+					<p class="primary"><?= get_field(PostTypeListings::ACF_USER_NAME, 'user_' . get_the_author_meta('ID')) ?></p>
+				<?php endif; ?>
+			</div>
+			
+			<?php if (get_field(PostTypeListings::ACF_USER_DESCRIPTION, 'user_' . get_the_author_meta('ID'))):  ?>
 					<p ><?= get_field(PostTypeListings::ACF_USER_DESCRIPTION, 'user_' . get_the_author_meta('ID')) ?></p>
 			<?php endif; ?>
 
+			<?php  if (get_option('mokilla-social-links')) : ?>
+
+				<div class="socials"> 
+
+				<?php  foreach (get_option('mokilla-social-links') as $key => $option) : ?>
+
+					<a target="_blank" href="<?php echo $option ?>"> <i class="icon-<?php echo $key?>"> </i></a>
+
+				<?php endforeach; ?>
+
+				</div>
+
+			<?php endif; ?>
+
 		</div>
+
+		<h3 class="side-title">latest news</h3>
+
+		<?php foreach($posts as $post):  ?>
+
+			<a href="<?= get_the_permalink( $post->ID ); ?>" class="post-item-side">
+					<img src="<?= get_the_post_thumbnail_url( $post->ID ); ?>" >
+				<div>
+					<?php if(count(get_the_category($post->ID))): ?>
+						<span><?= get_the_category($post->ID)[0]->cat_name; ?></span>
+					<?php  endif; ?>
+				<p><?= get_the_title($post->ID) ?></p>
+				</div>
+			</a>
+
+		<?php endforeach;  ?>
+
     </div>
 	</div><!-- .entry-content -->
     </div>

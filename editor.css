@@ -1538,7 +1538,7 @@
 }
 .edit-post-visual-editor .entry-content-post-single {
   display: grid;
-  grid-template-columns: 1fr 250px;
+  grid-template-columns: 1fr 350px;
   grid-gap: 35px;
 }
 .edit-post-visual-editor .entry-content-post-single img {
@@ -1549,8 +1549,99 @@
   padding: 20px;
   margin-bottom: 50px;
 }
+.edit-post-visual-editor .box .user-info {
+  display: flex;
+}
+.edit-post-visual-editor .box .user-info img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-right: 25px;
+}
 .edit-post-visual-editor .box .accent {
   color: #9A1B34;
+}
+.edit-post-visual-editor .box .socials {
+  display: flex;
+}
+.edit-post-visual-editor .box .socials a {
+  text-decoration: none;
+  color: #30557C;
+  margin-right: 10px;
+}
+.edit-post-visual-editor .box .socials a:visited {
+  color: #30557C;
+}
+.edit-post-visual-editor .side-title {
+  text-transform: uppercase;
+  margin: 0 0 15px 0;
+}
+.edit-post-visual-editor .post-item-side {
+  text-decoration: none;
+  color: #30557C;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 15px;
+  margin-bottom: 20px;
+}
+.edit-post-visual-editor .post-item-side p {
+  margin: 10px 0 0 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+.edit-post-visual-editor .post-item-side span {
+  text-transform: uppercase;
+  color: #9A1B34;
+}
+.edit-post-visual-editor .post-item-side:visited {
+  color: #30557C;
+}
+.edit-post-visual-editor .error-404, .edit-post-visual-editor .not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+.edit-post-visual-editor .error-404 .page-content, .edit-post-visual-editor .not-found .page-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.edit-post-visual-editor .error-404 .page-content form, .edit-post-visual-editor .not-found .page-content form {
+  margin-top: 40px;
+}
+.edit-post-visual-editor .error-404 .page-content form input, .edit-post-visual-editor .not-found .page-content form input {
+  padding: 10px 22px;
+  border: 1px solid #30557C;
+  border-radius: 0;
+  outline: none;
+  background: none;
+  font-size: 16px;
+}
+.edit-post-visual-editor .error-404 .page-content form .search-submit, .edit-post-visual-editor .not-found .page-content form .search-submit {
+  background: #30557C;
+  color: #FFFFFF;
+}
+.edit-post-visual-editor .search-results {
+  margin-bottom: 50px;
+}
+.edit-post-visual-editor .search-results .page-title {
+  text-transform: uppercase;
+  color: #30557C;
+}
+.edit-post-visual-editor .search-results .search-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 35px;
+}
+.edit-post-visual-editor .search-results .search-grid article h2 {
+  font-size: 18px;
+}
+.edit-post-visual-editor .search-results .search-grid article h2 a {
+  color: #231F20;
+  text-decoration: none;
 }
 .edit-post-visual-editor .comment-content a {
   word-wrap: break-word;

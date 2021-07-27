@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<section id="primary" class="content-area">
+	<section id="primary" class="content-area container search-results">
 		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
@@ -24,6 +24,7 @@ get_header();
 				</h1>
 			</header><!-- .page-header -->
 
+			<div class="search-grid">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -36,9 +37,10 @@ get_header();
 				 */
 				get_template_part( 'template-parts/content', 'search' );
 
-			endwhile;
+			endwhile; ?>
+			</div>
+			<?php
 
-			the_posts_navigation();
 
 		else :
 
