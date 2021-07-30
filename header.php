@@ -79,7 +79,7 @@
 
 		<nav class="mini-navigation">
 			
-		<a href="<?= get_post_type_archive_link( 'post' ); ?>">trending now</a>
+		<a href="<?= get_site_url() . '/posts'; ?>">trending now</a>
 
 		<button><i class="icon-search"></i></button>
 

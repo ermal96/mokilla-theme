@@ -2070,6 +2070,60 @@ body.locked {
   font-size: 14px;
 }
 
+.posts-page {
+  margin-bottom: 50px;
+}
+.posts-page header {
+  margin-top: 30px;
+}
+.posts-page header p span {
+  font-weight: 600;
+}
+.posts-page .grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 50px;
+}
+@media (max-width: 991px) {
+  .posts-page .grid {
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+  }
+}
+.posts-page .grid .post-item-single {
+  border-bottom: 1px solid #DAD9D5;
+  text-decoration: none;
+  color: inherit;
+}
+.posts-page .grid .post-item-single:visited {
+  color: inherit;
+}
+.posts-page .grid .post-item-single:nth-child(1) {
+  grid-column: 1/3;
+  grid-row: 1/3;
+  object-fit: cover;
+}
+@media (max-width: 991px) {
+  .posts-page .grid .post-item-single:nth-child(1) {
+    grid-column: 1/1;
+    grid-row: 1/1;
+  }
+}
+.posts-page .grid .post-item-single:nth-child(1) img {
+  height: calc(100% - 89px);
+  object-fit: cover;
+}
+.posts-page .grid .post-item-single p {
+  margin: 0;
+  color: #9A1B34;
+  text-transform: uppercase;
+}
+.posts-page .grid .post-item-single h2 {
+  color: #30557C;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
 /* Activate this to make room for sidebar */
 /*--------------------------------------------------------------
 # Infinite scroll
