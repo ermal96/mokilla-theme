@@ -85,9 +85,6 @@
             ));
             ?>
 
-
-		<p>bookmark (1)</p>
-
 		<button><i class="icon-search"></i></button>
 
 		</nav>
