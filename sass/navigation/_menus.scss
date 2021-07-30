@@ -10,6 +10,10 @@
   }
 }
 
+.site-header-wrapper {
+  overflow: visible !important;
+}
+
 .main-navigation,
 .mini-navigation,
 .side-navigation {
@@ -37,7 +41,6 @@
   }
 }
 
-
 .main-navigation {
   display: none;
   @include breakpoint(xl) {
@@ -51,6 +54,32 @@
   justify-content: flex-end;
   align-items: center;
   text-transform: uppercase;
+
+  .search-icon {
+    cursor: pointer;
+  }
+
+  form {
+    display: none;
+    position: absolute;
+    background: $color__white;
+    margin-right: 45px;
+    z-index: 10;
+    input {
+      border: 1px solid $color__gray-light;
+      outline: none;
+      border-radius: 0;
+      background: transparent;
+      padding: 5px 7px;
+      font-size: 14px;
+
+      &.search-submit {
+        background: $color__primary;
+        color: $color__white;
+        border: none;
+      }
+    }
+  }
 
   a {
     text-transform: uppercase;
@@ -66,9 +95,9 @@
     .menu-mini-container {
       display: none;
     }
-     a {
-       display: none;
-     }
+    a {
+      display: none;
+    }
   }
 
   p {
@@ -84,10 +113,6 @@
     margin-left: 2rem;
   }
 }
-
-
-
-
 
 .side-navigation {
   display: none;

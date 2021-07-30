@@ -102,7 +102,13 @@
 
 
 
+    // search button
 
+    $('.search-icon').click(function() {
+      $('.mini-navigation form').fadeToggle();
+
+      $(this).find('i').toggleClass('icon-search', 'icon-close');
+    })
 
 
   });

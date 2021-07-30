@@ -164,12 +164,12 @@ function mokilla_scripts() {
 	);
 	wp_enqueue_script(
 		'mokilla-scripts',
-		get_template_directory_uri() . '/js/side-menu.js',
+		get_template_directory_uri() . '/js/script.js',
 		array(
 			'jquery',
 			'customize-preview'
 		),
-		filemtime(get_template_directory() .  '/js/side-menu.js'),
+		filemtime(get_template_directory() .  '/js/script.js'),
 		true
 	);
 	wp_localize_script(

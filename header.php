@@ -40,11 +40,6 @@
             ));
             ?>
 
-
-		<div class="side-navigation-bookmark">
-			<p>bookmark (0)</p>
-		</div>
-
 		<?php  if (get_option('mokilla-social-links')) : ?>
 
 			<div class="side-navigation-socials"> 
@@ -79,13 +74,12 @@
 
 		<nav class="mini-navigation">
 			
-		<a href="<?= get_site_url() . '/posts'; ?>">trending now</a>
+			<a href="<?= get_site_url() . '/posts'; ?>">trending now</a>
 
-		<button><i class="icon-search"></i></button>
+			<?php get_search_form(); ?>
+			<button class="search-icon"><i class="icon-close icon-search"></i></button>
 
 		</nav>
-
-
 			</div>
 
 	</header><!-- #masthead -->
