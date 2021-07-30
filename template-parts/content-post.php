@@ -17,7 +17,7 @@ $posts = get_posts(array(
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
     <header class="entry-header">
-        <p><span>FRONT PAGE</span> >> INDIVIDUAL LISTING PAGE</p>
+        <p style="text-transform: uppercase;"><span>FRONT PAGE</span> >> <?= get_the_title(); ?></p>
 		<?php the_title('<h1 class="entry-title-post">', '</h1>'); ?>
 	</header><!-- .entry-header -->
 
@@ -25,10 +25,17 @@ $posts = get_posts(array(
 
 	<div class="entry-content-post-single">
 		<div>
+			<div class="meta-row">
+				<?php if(count(get_the_category( get_the_ID() ))): ?>
+					<p><?= get_the_category( get_the_ID() )[0]->name; ?></p>
+				<?php endif; ?>
+				<p><?= get_the_date( 'F j, Y', get_the_ID() ) ?></p>
+			</div>
+
             <?php mokilla_post_thumbnail(); ?>
             <?php the_content(); ?>
         </div>
-        <div>
+        <div style="margin-top: 64px;">
         <div class="box">
 			<div class="user-info">
 				<?php if (get_field(PostTypeListings::ACF_USER_IMAGE, 'user_' . get_the_author_meta('ID'))):  ?>
