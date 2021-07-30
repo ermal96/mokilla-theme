@@ -78,12 +78,8 @@
 		</nav>
 
 		<nav class="mini-navigation">
-			<?php
-            wp_nav_menu(array(
-                'theme_location' => 'menu-mini',
-                'menu_id'        => 'mini-menu',
-            ));
-            ?>
+			
+		<a href="<?= get_post_type_archive_link( 'post' ); ?>">trending now</a>
 
 		<button><i class="icon-search"></i></button>
 

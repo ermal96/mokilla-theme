@@ -55,11 +55,6 @@ if ( ! function_exists( 'mokilla_setup' ) ) :
 			)
 		);
 
-		register_nav_menus(
-			array(
-				'menu-mini' => esc_html__( 'Mini Menu', 'mokilla' ),
-			)
-		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments

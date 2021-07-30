@@ -37,7 +37,7 @@
 		<div class="articles-sidebar-header">
 			<h2><?php _e('latest recipes', 'mokilla') ?></h2>
 			<?php get_template_part('components/post-header-filter'); ?>
-			<a class="show-all-link" href="#"><?php _e('view all', 'mokilla') ?><i class="icon-arrow-top"></i></a>
+			<a class="show-all-link" href="<?= get_post_type_archive_link( 'post' ) ?>"><?php _e('view all', 'mokilla') ?><i class="icon-arrow-top"></i></a>
 		</div>
 
 		<div class="articles-grid">

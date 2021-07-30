@@ -52,11 +52,21 @@
   align-items: center;
   text-transform: uppercase;
 
+  a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $color__text-main;
+
+    &:visited {
+      color: $color__text-main;
+    }
+  }
+
   @include breakpoint(sm) {
     .menu-mini-container {
       display: none;
     }
-     p {
+     a {
        display: none;
      }
   }
