@@ -63,11 +63,17 @@ get_header();
 								<div class="border-card">
 									<h2>Listing Details</h2>
 									<div class="flex-row">
-										<p><span>Parking Capacity: </span>10</p>
-										<p><span>Pets Allowed: </span>Yes</p>
+										<p><span>Parking Capacity: </span><?= get_field(PostTypeListings::ACF_PARKING) ?></p>
+										<p><span>Pets Allowed: </span>
+										<?php if(get_field(PostTypeListings::ACF_PETS)){
+											echo 'Yes';
+										} else {
+											echo 'No';
+										} ?>
+										</p>
 									</div>
 									<div class="flex-row">
-										<p><span>Discount: </span>1</p>
+										<p><span>Discount: </span><?= get_field(PostTypeListings::ACF_DISCOUNT) ?></p>
 									</div>
 								</div>
 
@@ -81,6 +87,8 @@ get_header();
                             </div>
 
                             <div class="col">
+
+							<?php if(false): ?>
 
 								<h3 class="box-title">Author Info</h3>
 								<div class="box">
@@ -102,6 +110,7 @@ get_header();
 									<?php endif; ?>
 
 								</div>
+							<?php endif; ?>
 							
 								<?php if(count(get_field(PostTypeListings::ACF_AVAILABILITY_TIME))): 
 									$time = get_field(PostTypeListings::ACF_AVAILABILITY_TIME);
@@ -133,7 +142,7 @@ get_header();
 								</div>
 								<?php endif; ?>
 
-								<h3 class="box-title">Contact Info</h3>
+								<h3 class="box-title">Contact Us</h3>
 								<div class="box">
 									<?php if(get_field(PostTypeListings::ACF_EMAIL)):  ?>
 										<p><i class="icon-mail"></i><?= get_field(PostTypeListings::ACF_EMAIL) ?></p>
