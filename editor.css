@@ -1353,6 +1353,7 @@
 }
 .edit-post-visual-editor .home-slide-slider .slick-slide {
   margin: 0 3rem;
+  text-decoration: none;
 }
 .edit-post-visual-editor .home-slide-slider .slick-list {
   margin: 0 -3rem;

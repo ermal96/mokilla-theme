@@ -68,7 +68,7 @@
 		<div class="home-slide-slider">
 			<?php foreach ($categories as $category) : ?>
 
-					<a class="home-slide-slider-slide" >
+					<a href="<?= get_term_link( $category ); ?>" class="home-slide-slider-slide" >
 						<img src="<?= get_field('mokilla_category_image', $category) ?>" alt="<?= $category->name; ?>">
 						<div class="slide-content">
 							<p><?= $category->name; ?></p>

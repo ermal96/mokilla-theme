@@ -1,8 +1,4 @@
 <?php
-/**
-* Template Name: Posts Page
-*
-*/
 
 get_header();
 ?>
@@ -10,18 +6,16 @@ get_header();
 <div id="primary" class="content-area posts-page container">
 		<main id="main" class="site-main">
         <header class="page-header">
-				<p><span>FRONT PAGE</span> >> BLOG</p>
+				<p><span>FRONT PAGE</span> >> Category</p>
 		</header><!-- .page-header -->
 
         <div class="grid">
-            <?php 
-            // the query
-            $the_query = new WP_Query( array('post_type' => 'post') ); ?>
+
             
-            <?php if ( $the_query->have_posts() ) : ?>
+            <?php if (have_posts() ) : ?>
             
                 <!-- the loop -->
-                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                <?php while (have_posts() ) :the_post(); ?>
                 <a href="<?= get_the_permalink(); ?>" class="post-item-single">
                     <?php the_post_thumbnail(); ?>
                     <?php if(count(get_the_category( get_the_ID() ))): ?>
