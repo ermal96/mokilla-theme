@@ -7,11 +7,17 @@
  * @package Mokilla
  */
 
- $grid_posts = get_posts(array('numberposts' => 3 ));
+$articles = get_term_by('slug', 'articles', 'category');
+$aricle_id = null;
+if($articles) {
+	$aricle_id = $articles->term_id;
+}
 
- $posts = get_posts(array('numberposts' => 4 ));
+ $grid_posts = get_posts(array('numberposts' => 3, 'category_name' => 'articles' ));
 
- $categories = get_categories();
+ $posts = get_posts(array('numberposts' => 4, 'category__not_in' => $aricle_id ));
+
+ $categories = get_terms('category',array('exclude' => $aricle_id))
 
 ?>
 

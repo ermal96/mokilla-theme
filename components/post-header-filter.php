@@ -1,4 +1,14 @@
-<?php $categories = get_categories(array('number' => 4)); ?>
+<?php 
+
+$articles = get_term_by('slug', 'articles', 'category');
+$aricle_id = null;
+if($articles) {
+	$aricle_id = $articles->term_id;
+}
+
+$categories = get_terms('category',array('number' => 4, 'exclude' => $aricle_id)); 
+
+?>
 
 <ul class="cat-list">
 	<?php foreach ($categories as $category) : ?>
